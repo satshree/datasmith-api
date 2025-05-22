@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # APPS
     'convert',
     'data',
+    'main',
 ]
 
 MIDDLEWARE = [
