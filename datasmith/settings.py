@@ -13,8 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-from .log_settings import *
-from .rest_framework_settings import *
 
 load_dotenv()
 
@@ -32,7 +30,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "")
 DEBUG = os.environ.get("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", ";").split(";")
-print(ALLOWED_HOSTS)
 
 # Application definition
 
@@ -133,3 +130,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+from .log_settings import *
+from .cors_settings import *
+from .rest_framework_settings import *

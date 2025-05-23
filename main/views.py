@@ -14,6 +14,7 @@ from .responses import error_response, success_response
 class BaseViewSet(viewsets.GenericViewSet):
     """Base View Set."""
     # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = []
 
     status = status
 
