@@ -16,14 +16,6 @@ python -m pip install --upgrade pip
 echo "Building the project..."
 python -m pip install -r requirements.txt
 
-# Migrations
-# echo "Database migration..."
-# python manage.py migrate --noinput
-
-# Collect static files
-echo "Collecting static files..."
-python manage.py collectstatic --noinput --verbosity 2
-
 # echo "VERCEL_ENV: $VERCEL_ENV"
 
 # if [[ "$VERCEL_ENV" == "production" ]]; then
@@ -42,14 +34,6 @@ python manage.py collectstatic --noinput --verbosity 2
 #     # Build the project
 #     echo "Building the project..."
 #     python -m pip install -r requirements.txt
-
-#     # Migrations
-#     # echo "Database migration..."
-#     # python manage.py migrate --noinput
-
-#     # Collect static files
-#     echo "Collecting static files..."
-#     python manage.py collectstatic --noinput --verbosity 2
 # else
 #     # Don't build
 #     echo "🛑 - Build cancelled"
