@@ -10,9 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from .rest_framework_settings import *
-from .cors_settings import *
-from .log_settings import *
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -155,3 +152,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 APP_API_KEY = os.environ.get("APP_API_KEY", "")
+
+from .log_settings import *
+from .cors_settings import *
+from .rest_framework_settings import *
