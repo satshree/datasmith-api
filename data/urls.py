@@ -5,6 +5,7 @@ app_name = "data"
 
 router = routers.SimpleRouter()
 
-# router.register(r"get-chart-data",)
+router.register(r"get-chart-data", views.ChartDataViewSet,
+                basename="get-chart-data")
 
 urlpatterns = router.urls
