@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # THIRD PARTY PACKAGES
+    'corsheaders',
+
     # APPS
     'convert',
     'data',
@@ -56,6 +59,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    # THIRD PARTY MIDDLEWARES
+    'corsheaders.middleware.CorsMiddleware',
+
+    # CUSTOM MIDDLEWARES
+    'main.middlewares.AuthenticatePublicEndpointMiddleware',
 ]
 
 ROOT_URLCONF = 'datasmith.urls'
@@ -130,6 +139,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+APP_API_KEY = os.environ.get("APP_API_KEY", "")
 
 from .log_settings import *
 from .cors_settings import *
